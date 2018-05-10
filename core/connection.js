@@ -694,6 +694,9 @@ Blockly.Connection.prototype.getOutputShape = function() {
   if (this.check_.indexOf('String') !== -1) {
     return Blockly.OUTPUT_SHAPE_SQUARE;
   }
+  if (this.check_.indexOf('Vector3') !== -1) {
+    return Blockly.OUTPUT_SHAPE_ARROW;
+  }
   return Blockly.OUTPUT_SHAPE_ROUND;
 };
 

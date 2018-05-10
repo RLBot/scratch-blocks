@@ -107,6 +107,7 @@
     "MOTION_YPOSITION": "y position",
     "MOTION_DIRECTION": "direction",
     "OPERATORS_ADD": "%1 + %2",
+    "OPERATORS_VEC_ADD": "vector %1 + %2",
     "OPERATORS_SUBTRACT": "%1 - %2",
     "OPERATORS_MULTIPLY": "%1 * %2",
     "OPERATORS_DIVIDE": "%1 / %2",

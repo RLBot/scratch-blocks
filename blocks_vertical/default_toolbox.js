@@ -305,6 +305,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '<block type="control_delete_this_clone" id="control_delete_this_clone"></block>'+
   '</category>'+
   '<category name="Sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">'+
+    '<block type="sensing_rlbot_location" id="sensing_rlbot_location"></block>'+
     '<block type="sensing_touchingobject" id="sensing_touchingobject">'+
       '<value name="TOUCHINGOBJECTMENU">'+
         '<shadow type="sensing_touchingobjectmenu"></shadow>'+
@@ -349,6 +350,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '<block type="sensing_dayssince2000" id="sensing_dayssince2000"></block>'+
   '</category>'+
   '<category name="Operators" colour="#40BF4A" secondaryColour="#389438">'+
+    '<block type="operator_vec_add" id="operator_vec_add"></block>'+
     '<block type="operator_add" id="operator_add">'+
       '<value name="NUM1">'+
         '<shadow type="math_number">'+

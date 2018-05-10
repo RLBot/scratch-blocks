@@ -163,6 +163,7 @@ Blockly.Msg.MOTION_YSCROLL = "y scroll";
 
 // Operators blocks
 Blockly.Msg.OPERATORS_ADD = "%1 + %2";
+Blockly.Msg.OPERATORS_VEC_ADD = "vector %1 + %2";
 Blockly.Msg.OPERATORS_SUBTRACT = "%1 - %2";
 Blockly.Msg.OPERATORS_MULTIPLY = "%1 * %2";
 Blockly.Msg.OPERATORS_DIVIDE = "%1 / %2";

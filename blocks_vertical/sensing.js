@@ -28,6 +28,20 @@ goog.require('Blockly.constants');
 goog.require('Blockly.ScratchBlocks.VerticalExtensions');
 
 
+Blockly.Blocks['sensing_rlbot_location'] = {
+  /**
+   * Block to Report if the mouse is down.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "rlbot location",
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_vector"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_touchingobject'] = {
   /**
    * Block to Report if its touching a Object.

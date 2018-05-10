@@ -210,7 +210,7 @@ Blockly.ScratchBlocks.ProcedureUtils.createAllInputs_ = function(connectionMap) 
     var labelText;
     if (component.substring(0, 1) == '%') {
       var argumentType = component.substring(1, 2);
-      if (!(argumentType == 'n' || argumentType == 'b' || argumentType == 's')) {
+      if (!(argumentType == 'n' || argumentType == 'b' || argumentType == 's' || argumentType == 'v')) {
         throw new Error(
             'Found an custom procedure with an invalid type: ' + argumentType);
       }
@@ -221,6 +221,9 @@ Blockly.ScratchBlocks.ProcedureUtils.createAllInputs_ = function(connectionMap) 
       var input = this.appendValueInput(id);
       if (argumentType == 'b') {
         input.setCheck('Boolean');
+      }
+      if (argumentType == 'v') {
+        input.setCheck('Vector3');
       }
       this.populateArgument_(argumentType, argumentCount, connectionMap, id,
           input);

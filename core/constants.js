@@ -245,6 +245,12 @@ Blockly.OUTPUT_SHAPE_ROUND = 2;
 Blockly.OUTPUT_SHAPE_SQUARE = 3;
 
 /**
+ * ENUM for output shape: arrow (vector3 values).
+ * @type {number}
+ */
+Blockly.OUTPUT_SHAPE_ARROW = 4;
+
+/**
  * ENUM for categories.
  * @const
  */

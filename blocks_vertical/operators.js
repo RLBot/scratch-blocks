@@ -52,6 +52,32 @@ Blockly.Blocks['operator_add'] = {
   }
 };
 
+Blockly.Blocks['operator_vec_add'] = {
+  /**
+   * Block for adding two vectors.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_ADD,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC1",
+          "check": "Vector3"
+        },
+        {
+          "type": "input_value",
+          "name": "VEC2",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_vector"]
+    });
+  }
+};
+
 Blockly.Blocks['operator_subtract'] = {
   /**
    * Block for subtracting two numbers.

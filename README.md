@@ -1,3 +1,19 @@
+# RLBot Stuff
+
+## Development Environment
+
+1. Be on Linux
+1. Make sure you have Python 2.7 installed.
+1. Make sure you have the latest version of nodejs installed.
+1. Go download the closure library: https://developers.google.com/blockly/guides/modify/web/closure
+   - It tells you to put the folder next to "blockly", but just put it next to this one (scratch-gui)
+   - Be sure to rename the folder to "closure-library"
+1. Run `npm install`. This should put some files in the dist directory.
+Re-run every time you change something.
+
+The top level package is scratch-gui, go look at its README for a more complete description of
+the development cycle.
+
 # scratch-blocks
 #### Scratch Blocks is a library for building creative computing interfaces.
 [![Build Status](https://travis-ci.org/LLK/scratch-blocks.svg?branch=develop)](https://travis-ci.org/LLK/scratch-blocks)

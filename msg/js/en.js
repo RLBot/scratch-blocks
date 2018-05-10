@@ -113,6 +113,7 @@ Blockly.Msg["MOTION_XPOSITION"] = "x position";
 Blockly.Msg["MOTION_YPOSITION"] = "y position";
 Blockly.Msg["MOTION_DIRECTION"] = "direction";
 Blockly.Msg["OPERATORS_ADD"] = "%1 + %2";
+Blockly.Msg["OPERATORS_VEC_ADD"] = "vector %1 + %2";
 Blockly.Msg["OPERATORS_SUBTRACT"] = "%1 - %2";
 Blockly.Msg["OPERATORS_MULTIPLY"] = "%1 * %2";
 Blockly.Msg["OPERATORS_DIVIDE"] = "%1 / %2";
