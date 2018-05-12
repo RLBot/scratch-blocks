@@ -126,6 +126,12 @@ Blockly.Msg.LOOKS_NEXTBACKDROP = "next backdrop";
 // Motion blocks
 Blockly.Msg.MOTION_SETTHROTTLE = "set throttle to %1";
 Blockly.Msg.MOTION_SETSTEER = "set steering to %1";
+Blockly.Msg.MOTION_SETPITCH = "set pitch to %1";
+Blockly.Msg.MOTION_SETYAW = "set yaw to %1";
+Blockly.Msg.MOTION_SETROLL = "set roll to %1";
+Blockly.Msg.MOTION_SETJUMP = "set jump to %1";
+Blockly.Msg.MOTION_SETBOOST = "set boost to %1";
+Blockly.Msg.MOTION_SETHANDBRAKE = "set handbrake to %1";
 Blockly.Msg.MOTION_MOVESTEPS = "move %1 steps";
 Blockly.Msg.MOTION_TURNLEFT = "turn %1 %2 degrees";
 Blockly.Msg.MOTION_TURNRIGHT = "turn %1 %2 degrees";

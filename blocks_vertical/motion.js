@@ -30,7 +30,7 @@ goog.require('Blockly.ScratchBlocks.VerticalExtensions');
 
 Blockly.Blocks['motion_setthrottle'] = {
   /**
-   * Block to move steps.
+   * Block to set rlbot throttle.
    * @this Blockly.Block
    */
   init: function() {
@@ -50,7 +50,7 @@ Blockly.Blocks['motion_setthrottle'] = {
 
 Blockly.Blocks['motion_setsteer'] = {
   /**
-   * Block to move steps.
+   * Block to set rlbot steer.
    * @this Blockly.Block
    */
   init: function() {
@@ -60,6 +60,126 @@ Blockly.Blocks['motion_setsteer'] = {
         {
           "type": "input_value",
           "name": "NUM"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['motion_setpitch'] = {
+  /**
+   * Block to set rlbot pitch.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SETPITCH,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "NUM"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['motion_setyaw'] = {
+  /**
+   * Block to set rlbot yaw.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SETYAW,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "NUM"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['motion_setroll'] = {
+  /**
+   * Block to set rlbot roll.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SETROLL,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "NUM"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['motion_setjump'] = {
+  /**
+   * Block to set rlbot jump.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SETJUMP,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "BIT"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['motion_setboost'] = {
+  /**
+   * Block to set rlbot boost.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SETBOOST,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "BIT"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['motion_sethandbrake'] = {
+  /**
+   * Block to set rlbot handbrake.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SETHANDBRAKE,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "BIT"
         }
       ],
       "category": Blockly.Categories.motion,
