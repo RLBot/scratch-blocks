@@ -30,7 +30,7 @@ goog.require('Blockly.ScratchBlocks.VerticalExtensions');
 
 Blockly.Blocks['sensing_rlbot_location'] = {
   /**
-   * Block to Report if the mouse is down.
+   * Block to report the location of an object tracked by rlbot.
    * @this Blockly.Block
    */
   init: function() {
@@ -38,6 +38,40 @@ Blockly.Blocks['sensing_rlbot_location'] = {
       "message0": "rlbot location",
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_rlbot_velocity'] = {
+  /**
+   * Block to Report the velocity of an object tracked by rlbot.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "rlbot velocity",
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_rlbot_degreesto'] = {
+  /**
+   * Block to Report the number of degrees a rlbot car needs to turn to aim at a location.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "degrees to target %1",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC"
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
     });
   }
 };
