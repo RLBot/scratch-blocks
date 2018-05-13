@@ -510,6 +510,36 @@ Blockly.Blocks['sensing_of'] = {
   }
 };
 
+Blockly.Blocks['sensing_vectorof'] = {
+  /**
+   * Block to report vector properties of sprites.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_VECTOROF,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PROPERTY",
+          "options": [
+            [Blockly.Msg.SENSING_OF_RLBOTLOCATION, 'rlbot location'],
+            [Blockly.Msg.SENSING_OF_RLBOTVELOCITY, 'rlbot velocity']
+          ]
+        },
+        {
+          "type": "input_value",
+          "name": "OBJECT"
+        }
+      ],
+      "output": true,
+      "category": Blockly.Categories.sensing,
+      "outputShape": Blockly.OUTPUT_SHAPE_ARROW,
+      "extensions": ["colours_sensing", "output_vector"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_current'] = {
   /**
    * Block to Report the current option.
