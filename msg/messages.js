@@ -172,6 +172,14 @@ Blockly.Msg.MOTION_YSCROLL = "y scroll";
 // Operators blocks
 Blockly.Msg.OPERATORS_ADD = "%1 + %2";
 Blockly.Msg.OPERATORS_VEC_ADD = "vector %1 + %2";
+Blockly.Msg.OPERATORS_VEC_SUBTRACT = "vector %1 - %2";
+Blockly.Msg.OPERATORS_VEC_MAGNITUDE = "magnitude of %1";
+Blockly.Msg.OPERATORS_VEC_NORMALIZED = "%1 normalized";
+Blockly.Msg.OPERATORS_VEC_SCALED = "%1 scaled by %2";
+Blockly.Msg.OPERATORS_VEC_CONSTRUCTOR = "vector %1 %2 %3";
+Blockly.Msg.OPERATORS_VEC_XVAL = "x of %1";
+Blockly.Msg.OPERATORS_VEC_YVAL = "y of %1";
+Blockly.Msg.OPERATORS_VEC_ZVAL = "z of %1";
 Blockly.Msg.OPERATORS_SUBTRACT = "%1 - %2";
 Blockly.Msg.OPERATORS_MULTIPLY = "%1 * %2";
 Blockly.Msg.OPERATORS_DIVIDE = "%1 / %2";

@@ -78,6 +78,190 @@ Blockly.Blocks['operator_vec_add'] = {
   }
 };
 
+Blockly.Blocks['operator_vec_subtract'] = {
+  /**
+   * Block for subtracting two vectors.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_SUBTRACT,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC1",
+          "check": "Vector3"
+        },
+        {
+          "type": "input_value",
+          "name": "VEC2",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_magnitude'] = {
+  /**
+   * Block for getting the magnitude of a vector.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_MAGNITUDE,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_normalized'] = {
+  /**
+   * Block for normalizing a vector.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_NORMALIZED,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_scaled'] = {
+  /**
+   * Block for scaling a vector by some factor.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_SCALED,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        },
+        {
+          "type": "input_value",
+          "name": "NUM"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_constructor'] = {
+  /**
+   * Block for creating a new vector from x, y, and z.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_CONSTRUCTOR,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "NUM1"
+        },
+        {
+          "type": "input_value",
+          "name": "NUM2"
+        },
+        {
+          "type": "input_value",
+          "name": "NUM3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_xval'] = {
+  /**
+   * Block for getting the x value of a vector.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_XVAL,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_yval'] = {
+  /**
+   * Block for getting the y value of a vector.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_YVAL,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_vec_zval'] = {
+  /**
+   * Block for getting the z value of a vector.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_ZVAL,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['operator_subtract'] = {
   /**
    * Block for subtracting two numbers.
