@@ -67,7 +67,8 @@ Blockly.Blocks['sensing_rlbot_degreesto'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "VEC"
+          "name": "VEC",
+          "check": "Vector3"
         }
       ],
       "category": Blockly.Categories.sensing,

@@ -139,7 +139,8 @@ Blockly.Blocks['motion_setjump'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "BIT"
+          "name": "BIT",
+          "check": "Boolean"
         }
       ],
       "category": Blockly.Categories.motion,
@@ -159,7 +160,8 @@ Blockly.Blocks['motion_setboost'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "BIT"
+          "name": "BIT",
+          "check": "Boolean"
         }
       ],
       "category": Blockly.Categories.motion,
@@ -179,7 +181,8 @@ Blockly.Blocks['motion_sethandbrake'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "BIT"
+          "name": "BIT",
+          "check": "Boolean"
         }
       ],
       "category": Blockly.Categories.motion,

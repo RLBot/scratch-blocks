@@ -120,6 +120,8 @@
     "OPERATORS_MULTIPLY": "%1 * %2",
     "OPERATORS_DIVIDE": "%1 / %2",
     "OPERATORS_RANDOM": "pick random %1 to %2",
+    "OPERATORS_TRUE": "true",
+    "OPERATORS_FALSE": "false",
     "OPERATORS_GT": "%1 > %2",
     "OPERATORS_LT": "%1 < %2",
     "OPERATORS_EQUALS": "%1 = %2",

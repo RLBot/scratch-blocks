@@ -358,6 +358,34 @@ Blockly.Blocks['operator_random'] = {
   }
 };
 
+Blockly.Blocks['operator_true'] = {
+  /**
+   * Block that emits the value 'true'
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_TRUE,
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_boolean"]
+    });
+  }
+};
+
+Blockly.Blocks['operator_false'] = {
+  /**
+   * Block that emits the value 'false'
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_FALSE,
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_boolean"]
+    });
+  }
+};
+
 Blockly.Blocks['operator_lt'] = {
   /**
    * Block for less than comparator.
