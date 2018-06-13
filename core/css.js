@@ -459,6 +459,11 @@ Blockly.Css.CONTENT = [
     'font-weight: 500;',
   '}',
 
+  '.blocklyText.blocklyCheckbox {',
+    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-size: 20pt;',
+  '}',
+
   '.blocklyTextTruncated {',
     'font-size: 11pt;',
   '}',
