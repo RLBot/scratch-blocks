@@ -152,3 +152,27 @@ Blockly.Blocks['math_angle'] = {
     });
   }
 };
+
+Blockly.Blocks['logic_boolean'] = {
+  /**
+   * Block for generic boolean value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_checkbox",
+          "name": "BIT",
+          "value": "true"
+        }
+      ],
+      "output": "Boolean",
+      "outputShape": Blockly.OUTPUT_SHAPE_HEXAGONAL,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
