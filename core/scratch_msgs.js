@@ -25,12 +25,26 @@
 'use strict';
 
 /**
- * Name space for the Msg singleton.
+ * Name space for the ScratchMsgs singleton.
  * Msg gets populated in the message files.
  */
 goog.provide('Blockly.ScratchMsgs');
 
 goog.require('Blockly.Msg');
+
+
+/**
+ * The object containing messages for all locales - loaded from msg/scratch_msgs.
+ * @type {Object}
+ */
+Blockly.ScratchMsgs.locales = {};
+
+/**
+ * The current locale.
+ * @type {String}
+ * @private
+ */
+Blockly.ScratchMsgs.currentLocale_ = 'en';
 
 /**
  * Change the Blockly.Msg strings to a new Locale
@@ -40,9 +54,32 @@ goog.require('Blockly.Msg');
  */
 Blockly.ScratchMsgs.setLocale = function(locale) {
   if (Object.keys(Blockly.ScratchMsgs.locales).includes(locale)) {
+    Blockly.ScratchMsgs.currentLocale_ = locale;
     Blockly.Msg = Blockly.ScratchMsgs.locales[locale];
   } else {
     // keep current locale
     console.warn('Ignoring unrecognized locale: ' + locale);
   }
+};
+
+/**
+ * Gets a localized message, for use in the Scratch VM with json init.
+ * Does not interpolate placeholders. Provided to allow default values in
+ * dynamic menus, for example, 'next backdrop', or 'random position'
+ * @param {string} msgId id for the message, key in Msg table.
+ * @param {string} defaultMsg string to use if the id isn't found.
+ * @param {string} useLocale optional locale to use in place of currentLocale_.
+ * @return {string} message with placeholders filled.
+ * @package
+ */
+Blockly.ScratchMsgs.translate = function(msgId, defaultMsg, useLocale) {
+  var locale = useLocale || Blockly.ScratchMsgs.currentLocale_;
+
+  if (Object.keys(Blockly.ScratchMsgs.locales).includes(locale)) {
+    var messages = Blockly.ScratchMsgs.locales[locale];
+    if (Object.keys(messages).includes(msgId)) {
+      return messages[msgId];
+    }
+  }
+  return defaultMsg;
 };
