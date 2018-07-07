@@ -11,6 +11,9 @@
 1. Run `npm install`. This should put some files in the dist directory.
 Re-run every time you change something.
 
+You'll also want to run `npm run translate` any time you add a string to msg/messages.js.
+That will automatically propagate it to several generated files.
+
 The top level package is scratch-gui, go look at its README for a more complete description of
 the development cycle.
 

@@ -16,7 +16,7 @@ const match = function (str) {
     assert.notStrictEqual(str.indexOf('";'), str.length - 2, `[${str}] uses double quoted string, should use single quotes.`);
     if (str.indexOf("';") !== str.length - 2) return false;
     return true;
-}
+};
 
 // Extract key and value from message definition
 const extract = function (str) {
@@ -36,7 +36,7 @@ const stream = fs.createReadStream(PATH_INPUT);
 stream
     .pipe(es.split('\n'))
     .pipe(es.mapSync(function (str) {
-        if (!match(str)) return;
+        if (!match(str.trim())) return; // Trim first to accommodate CRLF.
         const result = extract(str);
         storage[result.key] = result.value;
     }))
