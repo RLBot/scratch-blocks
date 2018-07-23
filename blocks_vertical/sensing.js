@@ -35,7 +35,7 @@ Blockly.Blocks['sensing_rlbot_location'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "rlbot location",
+      "message0": "3D location",
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_vector"]
     });
@@ -49,9 +49,23 @@ Blockly.Blocks['sensing_rlbot_velocity'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "rlbot velocity",
+      "message0": "3D velocity",
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_vector"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_rlbot_defending_side'] = {
+  /**
+   * Block to Report the sign of the side that the bot is defending, e.g. -1 for blue team.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "defending side",
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
     });
   }
 };
@@ -524,8 +538,8 @@ Blockly.Blocks['sensing_vectorof'] = {
           "type": "field_dropdown",
           "name": "PROPERTY",
           "options": [
-            [Blockly.Msg.SENSING_OF_RLBOTLOCATION, 'rlbot location'],
-            [Blockly.Msg.SENSING_OF_RLBOTVELOCITY, 'rlbot velocity']
+            [Blockly.Msg.SENSING_OF_RLBOTLOCATION, '3D location'],
+            [Blockly.Msg.SENSING_OF_RLBOTVELOCITY, '3D velocity']
           ]
         },
         {
