@@ -153,7 +153,7 @@ Blockly.Blocks['math_angle'] = {
   }
 };
 
-Blockly.Blocks['logic_boolean'] = {
+Blockly.Blocks['math_boolean'] = {
   /**
    * Block for generic boolean value.
    * @this Blockly.Block
