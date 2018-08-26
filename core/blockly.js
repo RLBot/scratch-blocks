@@ -48,6 +48,7 @@ goog.require('Blockly.FieldTextInputRemovable');
 goog.require('Blockly.FieldTextDropdown');
 goog.require('Blockly.FieldNumber');
 goog.require('Blockly.FieldNumberDropdown');
+goog.require('Blockly.FieldMatrix');
 goog.require('Blockly.FieldVariable');
 goog.require('Blockly.FieldVerticalSeparator');
 goog.require('Blockly.Generator');
@@ -174,14 +175,19 @@ Blockly.svgResize = function(workspace) {
 };
 
 /**
- * Handle a key-down on SVG drawing surface.
+ * Handle a key-down on SVG drawing surface. Does nothing if the main workspace is not visible.
  * @param {!Event} e Key down event.
  * @private
  */
+// TODO (https://github.com/google/blockly/issues/1998) handle cases where there are multiple workspaces
+// and non-main workspaces are able to accept input.
 Blockly.onKeyDown_ = function(e) {
-  if (Blockly.mainWorkspace.options.readOnly || Blockly.utils.isTargetInput(e)) {
+  if (Blockly.mainWorkspace.options.readOnly || Blockly.utils.isTargetInput(e)
+      || (Blockly.mainWorkspace.rendered && !Blockly.mainWorkspace.isVisible())) {
     // No key actions on readonly workspaces.
     // When focused on an HTML text input widget, don't trap any keys.
+    // Ignore keypresses on rendered workspaces that have been explicitly
+    // hidden.
     return;
   }
   var deleteBlock = false;
@@ -384,18 +390,14 @@ Blockly.statusButtonCallback = function(id) {
 };
 
 /**
- * Update the visual state of a status button in an extension category header.
+ * Refresh the visual state of a status button in all extension category headers.
  * @param {Blockly.Workspace} workspace A workspace.
- * @param {string} id An extension id.
- * @param {Blockly.StatusButtonState} newStatus the new state for the button.
  */
-Blockly.updateStatusButton = function(workspace, id, newStatus) {
+Blockly.refreshStatusButtons = function(workspace) {
   var buttons = workspace.getFlyout().buttons_;
   for (var i = 0; i < buttons.length; i++) {
     if (buttons[i] instanceof Blockly.FlyoutExtensionCategoryHeader) {
-      if (buttons[i].extensionId == id) {
-        buttons[i].setStatus(newStatus);
-      }
+      buttons[i].refreshStatus();
     }
   }
 };

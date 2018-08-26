@@ -63,6 +63,7 @@ Blockly.Msg.DATA_SHOWVARIABLE = 'show variable %1';
 Blockly.Msg.DATA_HIDEVARIABLE = 'hide variable %1';
 Blockly.Msg.DATA_ADDTOLIST = 'add %1 to %2';
 Blockly.Msg.DATA_DELETEOFLIST = 'delete %1 of %2';
+Blockly.Msg.DATA_DELETEALLOFLIST = 'delete all of %1';
 Blockly.Msg.DATA_INSERTATLIST = 'insert %1 at %2 of %3';
 Blockly.Msg.DATA_REPLACEITEMOFLIST = 'replace item %1 of %2 with %3';
 Blockly.Msg.DATA_ITEMOFLIST = 'item %1 of %2';
@@ -133,6 +134,7 @@ Blockly.Msg.LOOKS_COSTUMENUMBERNAME = 'costume %1';
 Blockly.Msg.LOOKS_NUMBERNAME_NUMBER = 'number';
 Blockly.Msg.LOOKS_NUMBERNAME_NAME = 'name';
 Blockly.Msg.LOOKS_SWITCHBACKDROPTOANDWAIT = 'switch backdrop to %1 and wait';
+Blockly.Msg.LOOKS_NEXTBACKDROP_BLOCK = 'next backdrop';
 Blockly.Msg.LOOKS_NEXTBACKDROP = 'next backdrop';
 Blockly.Msg.LOOKS_PREVIOUSBACKDROP = 'previous backdrop';
 Blockly.Msg.LOOKS_RANDOMBACKDROP = 'random backdrop';
@@ -347,6 +349,7 @@ Blockly.Msg.DELETE_VARIABLE = 'Delete the "%1" variable';
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
 Blockly.Msg.NEW_PROCEDURE = 'Make a Block';
 Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A procedure named "%1" already exists.';
+Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block name';
 
 // Lists
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
@@ -356,6 +359,7 @@ Blockly.Msg.LIST_MODAL_TITLE = 'New List';
 Blockly.Msg.LIST_ALREADY_EXISTS = 'A list named "%1" already exists.';
 Blockly.Msg.RENAME_LIST_TITLE = 'Rename all "%1" lists to:';
 Blockly.Msg.RENAME_LIST_MODAL_TITLE = 'Rename List';
+Blockly.Msg.DEFAULT_LIST_ITEM = 'thing';
 
 // Broadcast Messages
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI

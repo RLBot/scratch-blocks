@@ -75,13 +75,14 @@ Blockly.FlyoutExtensionCategoryHeader.prototype.createDom = function() {
 
   this.addTextSvg(true);
 
-  this.setStatus(Blockly.StatusButtonState.NOT_READY);
+  this.refreshStatus();
 
   var statusButtonWidth = 25;
   var marginX = 15;
   var marginY = 10;
 
-  var statusButtonX = (this.flyoutWidth_ - statusButtonWidth - marginX) / this.workspace_.scale;
+  var statusButtonX = this.workspace_.RTL ? (marginX - this.flyoutWidth_ + statusButtonWidth) :
+      (this.flyoutWidth_ - statusButtonWidth - marginX) / this.workspace_.scale;
 
   if (this.imageSrc_) {
     /** @type {SVGElement} */
@@ -107,9 +108,9 @@ Blockly.FlyoutExtensionCategoryHeader.prototype.createDom = function() {
 
 /**
  * Set the image on the status button using a status string.
- * @param {Blockly.StatusButtonState} status The status string.
  */
-Blockly.FlyoutExtensionCategoryHeader.prototype.setStatus = function(status) {
+Blockly.FlyoutExtensionCategoryHeader.prototype.refreshStatus = function() {
+  var status = Blockly.FlyoutExtensionCategoryHeader.getExtensionState(this.extensionId);
   var basePath = Blockly.mainWorkspace.options.pathToMedia;
   if (status == Blockly.StatusButtonState.READY) {
     this.setImageSrc(basePath + 'status-ready.svg');
@@ -134,4 +135,14 @@ Blockly.FlyoutExtensionCategoryHeader.prototype.setImageSrc = function(src) {
     this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink',
         'xlink:href', this.imageSrc_ || '');
   }
+};
+
+/**
+ * Gets the extension state. Overridden externally.
+ * @param {string} extensionId The ID of the extension in question.
+ * @return {Blockly.StatusButtonState} The state of the extension.
+ * @public
+ */
+Blockly.FlyoutExtensionCategoryHeader.getExtensionState = function(/* extensionId */) {
+  return Blockly.StatusButtonState.NOT_READY;
 };

@@ -127,11 +127,19 @@ Blockly.WorkspaceSvg.prototype.resizeHandlerWrapper_ = null;
 
 /**
  * The render status of an SVG workspace.
- * Returns `true` for visible workspaces and `false` for non-visible,
- * or headless, workspaces.
+ * Returns `false` for headless workspaces and true for instances of
+ * `Blockly.WorkspaceSvg`.
  * @type {boolean}
  */
 Blockly.WorkspaceSvg.prototype.rendered = true;
+
+/**
+ * Whether the workspace is visible.  False if the workspace has been hidden
+ * by calling `setVisible(false)`.
+ * @type {boolean}
+ * @private
+ */
+Blockly.WorkspaceSvg.prototype.isVisible_ = true;
 
 /**
  * Is this workspace the surface for a flyout?
@@ -314,6 +322,15 @@ Blockly.WorkspaceSvg.prototype.getInverseScreenCTM = function() {
   }
 
   return this.inverseScreenCTM_;
+};
+
+/**
+ * Getter for isVisible
+ * @return {boolean} Whether the workspace is visible.  False if the workspace has been hidden
+ * by calling `setVisible(false)`.
+ */
+Blockly.WorkspaceSvg.prototype.isVisible = function() {
+  return this.isVisible_;
 };
 
 /**
@@ -865,6 +882,7 @@ Blockly.WorkspaceSvg.prototype.setVisible = function(isVisible) {
     Blockly.hideChaff(true);
     Blockly.DropDownDiv.hideWithoutAnimation();
   }
+  this.isVisible_ = isVisible;
 };
 
 /**
@@ -1298,10 +1316,15 @@ Blockly.WorkspaceSvg.prototype.onMouseWheel_ = function(e) {
   if (this.currentGesture_) {
     this.currentGesture_.cancel();
   }
+
+  // Multiplier variable, so that non-pixel-deltaModes are supported.
+  // See LLK/scratch-blocks#1190.
+  var multiplier = e.deltaMode === 0x1 ? Blockly.LINE_SCROLL_MULTIPLIER : 1;
+
   if (e.ctrlKey) {
     // The vertical scroll distance that corresponds to a click of a zoom button.
     var PIXELS_PER_ZOOM_STEP = 50;
-    var delta = -e.deltaY / PIXELS_PER_ZOOM_STEP;
+    var delta = -e.deltaY / PIXELS_PER_ZOOM_STEP * multiplier;
     var position = Blockly.utils.mouseToSvg(e, this.getParentSvg(),
         this.getInverseScreenCTM());
     this.zoom(position.x, position.y, delta);
@@ -1311,8 +1334,18 @@ Blockly.WorkspaceSvg.prototype.onMouseWheel_ = function(e) {
     // (mouse scroll makes field out of place with div)
     Blockly.WidgetDiv.hide(true);
     Blockly.DropDownDiv.hideWithoutAnimation();
-    var x = this.scrollX - e.deltaX;
-    var y = this.scrollY - e.deltaY;
+
+    var x = this.scrollX - e.deltaX * multiplier;
+    var y = this.scrollY - e.deltaY * multiplier;
+
+    if (e.shiftKey && e.deltaX === 0) {
+      // Scroll horizontally (based on vertical scroll delta)
+      // This is needed as for some browser/system combinations which do not
+      // set deltaX. See #1662.
+      x = this.scrollX - e.deltaY * multiplier;
+      y = this.scrollY; // Don't scroll vertically
+    }
+
     this.startDragMetrics = this.getMetrics();
     this.scroll(x, y);
   }
