@@ -56,6 +56,50 @@ Blockly.Blocks['sensing_rlbot_velocity'] = {
   }
 };
 
+Blockly.Blocks['sensing_rlbot_pitch'] = {
+  /**
+   * Block to report the pitch of the object tracked by rlbot (as in pitch, yaw, roll)
+   * It will be expressed in degrees.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "3D pitch",
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_rlbot_roll'] = {
+  /**
+   * Block to report the roll of the object tracked by rlbot (as in pitch, yaw, roll)
+   * It will be expressed in degrees.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "3D roll",
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_rlbot_boost'] = {
+  /**
+   * Block to report the available boost of a car tracked by rlbot.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "boost amount",
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['sensing_rlbot_defending_side'] = {
   /**
    * Block to Report the sign of the side that the bot is defending, e.g. -1 for blue team.
