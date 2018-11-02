@@ -56,6 +56,32 @@ Blockly.Blocks['math_number'] = {
   }
 };
 
+Blockly.Blocks['math_number_slider'] = {
+  /**
+   * Block for generic numeric value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_number_slider",
+          "name": "NUM",
+          "min": -1,
+          "max": 1,
+          "precision": 0.01
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
 Blockly.Blocks['math_integer'] = {
   /**
    * Block for integer value (no decimal, + or -).
