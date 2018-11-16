@@ -2,12 +2,13 @@
 
 ## Development Environment
 
-1. Be on Linux
-1. Make sure you have Python 2.7 installed.
-1. Make sure you have the latest version of nodejs installed.
+1. Be on Linux (or Windows Subsystem for Linux)
+1. Make sure you have Python 2.7 installed. Use `python --version` to confirm.
+1. Make sure you have the latest version of nodejs and npm installed. This will get the job done: https://github.com/nodesource/distributions/blob/master/README.md#debinstall
+1. Make sure you have java installed. http://tipsonubuntu.com/2016/07/31/install-oracle-java-8-9-ubuntu-16-04-linux-mint-18/
 1. Go download the closure library: https://developers.google.com/blockly/guides/modify/web/closure
-   - It tells you to put the folder next to "blockly", but just put it next to this one (scratch-gui)
-   - Be sure to rename the folder to "closure-library"
+   - It tells you to put the folder next to "blockly", but just put it next to this one (scratch-blocks)
+   - Be sure to rename the folder to "closure-library". The folder should contain package.json at the top level.
 1. Run `npm install`. This should put some files in the dist directory.
 Re-run every time you change something.
 
