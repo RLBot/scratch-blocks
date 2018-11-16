@@ -67,6 +67,7 @@ Blockly.Msg.DATA_DELETEALLOFLIST = 'delete all of %1';
 Blockly.Msg.DATA_INSERTATLIST = 'insert %1 at %2 of %3';
 Blockly.Msg.DATA_REPLACEITEMOFLIST = 'replace item %1 of %2 with %3';
 Blockly.Msg.DATA_ITEMOFLIST = 'item %1 of %2';
+Blockly.Msg.DATA_ITEMNUMOFLIST = 'item # of %1 in %2';
 Blockly.Msg.DATA_LENGTHOFLIST = 'length of %1';
 Blockly.Msg.DATA_LISTCONTAINSITEM = '%1 contains %2?';
 Blockly.Msg.DATA_SHOWLIST = 'show list %1';
@@ -154,6 +155,7 @@ Blockly.Msg.MOTION_TURNRIGHT = 'turn %1 %2 degrees';
 Blockly.Msg.MOTION_POINTINDIRECTION = 'point in direction %1';
 Blockly.Msg.MOTION_POINTTOWARDS = 'point towards %1';
 Blockly.Msg.MOTION_POINTTOWARDS_POINTER = 'mouse-pointer';
+Blockly.Msg.MOTION_POINTTOWARDS_RANDOM = 'random direction';
 Blockly.Msg.MOTION_GOTO = 'go to %1';
 Blockly.Msg.MOTION_GOTO_POINTER = 'mouse-pointer';
 Blockly.Msg.MOTION_GOTO_RANDOM = 'random position';
@@ -297,6 +299,7 @@ Blockly.Msg.SOUND_EFFECTS_PAN = 'pan left/right';
 Blockly.Msg.SOUND_CHANGEVOLUMEBY = 'change volume by %1';
 Blockly.Msg.SOUND_SETVOLUMETO = 'set volume to %1%';
 Blockly.Msg.SOUND_VOLUME = 'volume';
+Blockly.Msg.SOUND_RECORD = 'record...';
 
 // Category labels
 Blockly.Msg.CATEGORY_MOTION = 'Motion';
@@ -362,6 +365,8 @@ Blockly.Msg.LIST_ALREADY_EXISTS = 'A list named "%1" already exists.';
 Blockly.Msg.RENAME_LIST_TITLE = 'Rename all "%1" lists to:';
 Blockly.Msg.RENAME_LIST_MODAL_TITLE = 'Rename List';
 Blockly.Msg.DEFAULT_LIST_ITEM = 'thing';
+Blockly.Msg.DELETE_LIST = 'Delete the "%1" list';
+Blockly.Msg.RENAME_LIST = 'Rename list';
 
 // Broadcast Messages
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI

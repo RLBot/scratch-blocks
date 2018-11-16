@@ -799,6 +799,9 @@ Blockly.Css.CONTENT = [
     'cursor: pointer;',
   '}',
 
+  '.blocklyAngleDragArrow {',
+    'pointer-events: none',
+  '}',
 
   '.blocklyAngleMarks {',
     'stroke: #fff;',
@@ -999,6 +1002,13 @@ Blockly.Css.CONTENT = [
     'width: 50%;',
     'text-align: center;',
     'float: left;',
+  '}',
+
+  '.scratchNotePickerKeyLabel {',
+    'font-family: "Helvetica Neue", Helvetica, sans-serif;',
+    'font-size: 0.75rem;',
+    'fill: $colour_text;',
+    'pointer-events: none;',
   '}',
 
   /* Copied from: goog/css/menu.css */

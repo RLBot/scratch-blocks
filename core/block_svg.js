@@ -83,6 +83,11 @@ Blockly.BlockSvg = function(workspace, prototypeName, opt_id) {
   Blockly.Tooltip.bindMouseEvents(this.svgPath_);
   Blockly.BlockSvg.superClass_.constructor.call(this,
       workspace, prototypeName, opt_id);
+
+  // Expose this block's ID on its top-level SVG group.
+  if (this.svgGroup_.dataset) {
+    this.svgGroup_.dataset.id = this.id;
+  }
 };
 goog.inherits(Blockly.BlockSvg, Blockly.Block);
 
@@ -669,8 +674,10 @@ Blockly.BlockSvg.prototype.showContextMenu_ = function(e) {
   var block = this;
   var menuOptions = [];
 
+  var isMouseEvent = Blockly.Touch.getTouchIdentifierFromEvent(e) == 'mouse';
   if (this.isDeletable() && this.isMovable() && !block.isInFlyout) {
-    menuOptions.push(Blockly.ContextMenu.blockDuplicateOption(block));
+    menuOptions.push(
+        Blockly.ContextMenu.blockDuplicateOption(block, isMouseEvent));
     if (this.isEditable() && this.workspace.options.comments) {
       menuOptions.push(Blockly.ContextMenu.blockCommentOption(block));
     }
