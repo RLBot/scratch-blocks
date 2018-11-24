@@ -354,6 +354,34 @@ Blockly.Blocks['operator_divide'] = {
   }
 };
 
+Blockly.Blocks['operator_clamp'] = {
+  /**
+   * Block for clamping a number to a given range.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_CLAMP,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VALUE"
+        },
+        {
+          "type": "input_value",
+          "name": "MIN"
+        },
+        {
+          "type": "input_value",
+          "name": "MAX"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_number"]
+    });
+  }
+};
+
 Blockly.Blocks['operator_random'] = {
   /**
    * Block for picking a random number.

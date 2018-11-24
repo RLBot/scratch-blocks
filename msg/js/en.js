@@ -165,6 +165,7 @@ Blockly.Msg["OPERATORS_VEC_ZVAL"] = "z of %1";
 Blockly.Msg["OPERATORS_SUBTRACT"] = "%1 - %2";
 Blockly.Msg["OPERATORS_MULTIPLY"] = "%1 * %2";
 Blockly.Msg["OPERATORS_DIVIDE"] = "%1 / %2";
+Blockly.Msg["OPERATORS_CLAMP"] = "%1 limited between %2 and %3";
 Blockly.Msg["OPERATORS_RANDOM"] = "pick random %1 to %2";
 Blockly.Msg["OPERATORS_TRUE"] = "true";
 Blockly.Msg["OPERATORS_FALSE"] = "false";

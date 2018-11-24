@@ -159,6 +159,7 @@
     "OPERATORS_SUBTRACT": "%1 - %2",
     "OPERATORS_MULTIPLY": "%1 * %2",
     "OPERATORS_DIVIDE": "%1 / %2",
+    "OPERATORS_CLAMP": "%1 limited between %2 and %3",
     "OPERATORS_RANDOM": "pick random %1 to %2",
     "OPERATORS_TRUE": "true",
     "OPERATORS_FALSE": "false",
