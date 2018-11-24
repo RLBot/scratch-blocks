@@ -199,6 +199,26 @@ Blockly.Blocks['operator_vec_constructor'] = {
   }
 };
 
+Blockly.Blocks['operator_vec_fromstring'] = {
+  /**
+   * Block for creating a new vector from a string of the form (0, 0, 0)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.OPERATORS_VEC_FROMSTRING,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "STRING"
+        }
+      ],
+      "category": Blockly.Categories.operators,
+      "extensions": ["colours_operators", "output_vector"]
+    });
+  }
+};
+
 Blockly.Blocks['operator_vec_xval'] = {
   /**
    * Block for getting the x value of a vector.

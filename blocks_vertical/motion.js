@@ -379,6 +379,27 @@ Blockly.Blocks['motion_gotoxy'] = {
   }
 };
 
+Blockly.Blocks['motion_gotovector'] = {
+  /**
+   * Block to go to the x and y found in a vector.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_GOTOVECTOR,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VEC",
+          "check": "Vector3"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
 Blockly.Blocks['motion_goto'] = {
   /**
    * Block to go to a menu item.
