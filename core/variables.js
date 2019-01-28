@@ -299,6 +299,7 @@ Blockly.Variables.createVariable = function(workspace, opt_callback, opt_type) {
   // Prompt the user to enter a name for the variable
   Blockly.prompt(newMsg, '',
       function(text, additionalVars, variableOptions) {
+        variableOptions = variableOptions || {};
         var scope = variableOptions.scope;
         var isLocal = (scope === 'local') || false;
         var isCloud = variableOptions.isCloud || false;
@@ -487,11 +488,17 @@ Blockly.Variables.renameVariable = function(workspace, variable,
   var validate = Blockly.Variables.nameValidator_.bind(null, varType);
 
   var promptText = promptMsg.replace('%1', variable.name);
-  Blockly.prompt(promptText, '',
+  var promptDefaultText = variable.name;
+  if (variable.isCloud && variable.name.indexOf(Blockly.Variables.CLOUD_PREFIX) == 0) {
+    promptDefaultText = promptDefaultText.substring(Blockly.Variables.CLOUD_PREFIX.length);
+  }
+
+  Blockly.prompt(promptText, promptDefaultText,
       function(newName, additionalVars) {
         if (variable.isCloud &&
-            newName.length > 0 && newName.indexOf(Blockly.Variables.CLOUD_PREFIX) == 0 ) {
-          newName = newName.substring(2); // The name validator will add the prefix back
+            newName.length > 0 && newName.indexOf(Blockly.Variables.CLOUD_PREFIX) == 0) {
+          newName = newName.substring(Blockly.Variables.CLOUD_PREFIX.length);
+          // The name validator will add the prefix back
         }
         additionalVars = additionalVars || [];
         var additionalVarNames = variable.isLocal ? [] : additionalVars;

@@ -518,15 +518,18 @@ Blockly.Constants.Data.CUSTOM_CONTEXT_MENU_GET_VARIABLE_MIXIN = {
     if (this.isCollapsed()) {
       return;
     }
+    var currentVarName = this.getField(fieldName).text_;
     if (!this.isInFlyout) {
       var variablesList = this.workspace.getVariablesOfType('');
       for (var i = 0; i < variablesList.length; i++) {
+        var varName = variablesList[i].name;
+        if (varName == currentVarName) continue;
         var option = {enabled: true};
-        option.text = variablesList[i].name;
+        option.text = varName;
 
         option.callback =
             Blockly.Constants.Data.VARIABLE_OPTION_CALLBACK_FACTORY(this,
-                option.text, fieldName);
+                variablesList[i].getId(), fieldName);
         options.push(option);
       }
     } else {
@@ -536,9 +539,8 @@ Blockly.Constants.Data.CUSTOM_CONTEXT_MENU_GET_VARIABLE_MIXIN = {
         callback: Blockly.Constants.Data.RENAME_OPTION_CALLBACK_FACTORY(this,
             fieldName)
       };
-      var name = this.getField(fieldName).text_;
       var deleteOption = {
-        text: Blockly.Msg.DELETE_VARIABLE.replace('%1', name),
+        text: Blockly.Msg.DELETE_VARIABLE.replace('%1', currentVarName),
         enabled: true,
         callback: Blockly.Constants.Data.DELETE_OPTION_CALLBACK_FACTORY(this,
             fieldName)
@@ -571,15 +573,19 @@ Blockly.Constants.Data.CUSTOM_CONTEXT_MENU_GET_LIST_MIXIN = {
     if (this.isCollapsed()) {
       return;
     }
+    var currentVarName = this.getField(fieldName).text_;
     if (!this.isInFlyout) {
       var variablesList = this.workspace.getVariablesOfType('list');
       for (var i = 0; i < variablesList.length; i++) {
+        var varName = variablesList[i].name;
+        if (varName == currentVarName) continue;
+
         var option = {enabled: true};
-        option.text = variablesList[i].name;
+        option.text = varName;
 
         option.callback =
             Blockly.Constants.Data.VARIABLE_OPTION_CALLBACK_FACTORY(this,
-                option.text, fieldName);
+                variablesList[i].getId(), fieldName);
         options.push(option);
       }
     } else {
@@ -589,9 +595,8 @@ Blockly.Constants.Data.CUSTOM_CONTEXT_MENU_GET_LIST_MIXIN = {
         callback: Blockly.Constants.Data.RENAME_OPTION_CALLBACK_FACTORY(this,
             fieldName)
       };
-      var name = this.getField(fieldName).text_;
       var deleteOption = {
-        text: Blockly.Msg.DELETE_LIST.replace('%1', name),
+        text: Blockly.Msg.DELETE_LIST.replace('%1', currentVarName),
         enabled: true,
         callback: Blockly.Constants.Data.DELETE_OPTION_CALLBACK_FACTORY(this,
             fieldName)
@@ -610,18 +615,18 @@ Blockly.Extensions.registerMixin('contextMenu_getListBlock',
  * menu, and clicking on that item changes the text of the field on the source
  * block.
  * @param {!Blockly.Block} block The block to update.
- * @param {string} name The new name to display on the block.
+ * @param {string} id The id of the variable to set on this block.
  * @param {string} fieldName The name of the field to update on the block.
  * @return {!function()} A function that updates the block with the new name.
  */
 Blockly.Constants.Data.VARIABLE_OPTION_CALLBACK_FACTORY = function(block,
-    name, fieldName) {
+    id, fieldName) {
   return function() {
     var variableField = block.getField(fieldName);
     if (!variableField) {
       console.log("Tried to get a variable field on the wrong type of block.");
     }
-    variableField.setText(name);
+    variableField.setValue(id);
   };
 };
 
